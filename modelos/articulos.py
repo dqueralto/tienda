@@ -5,8 +5,8 @@ class Articulos(models.Model):
     _name = 'tienda.articulos'
     cod = fields.Char('Codigo', required=True)
     nombre = fields.Char('Nombre', required=True)
-    marca = fields.Integer('Marca', required=False)
-    modelo = fields.Integer('Modelo', required=False)
+    marca = fields.Char('Marca', required=False)
+    modelo = fields.Char('Modelo', required=False)
     descripcion = fields.Text('Descripción', required=False)
     proveedor = fields.Many2one('tienda.proveedores','Proveedor', required=False)
     preventa = fields.Integer('Precio de venta', required=False)
