@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <data>
+        <act_window id="articulos_action" name="Articulos"
+                     res_model="tienda.articulos" />
+
+
+        <record id="articulos_view_tree" model="ir.ui.view">
+            <field name="name">Articulos almacenados</field>
+            <field name="model">tienda.articulos</field>
+            <field name="arch" type="xml">
+
+                <tree>
+                    <field name="cod" />
+                    <field name="nombre" />
+                    <field name="marca" />
+                    <field name="modelo" />
+                    <field name="descripcion" />
+                    <field name="proveedor" />
+                    <field name="preventa" />
+                </tree>
+            </field>
+        </record>
+
+        <record id="articulos_view_form" model="ir.ui.view">
+            <field name="name">Agregar articulos</field>
+            <field name="model">tienda.articulos</field>
+            <field name="arch" type="xml">
+                <form>
+                   <header>
+                       <button name="limpiar" type="object" string="Limpia" class="oe_highlight" />
+                       <button name="limpia_todo" type="object" string="Limpia todo" class="oe_highlight" />
+
+
+                    </header>
+
+                    <group>
+                        <field name="cod" />
+                        <field name="nombre" />
+                        <field name="marca" />
+                        <field name="modelo" />
+                        <field name="descripcion" />
+                        <field name="proveedor" />
+                        <field name="preventa" />
+                    </group>
+                </form>
+            </field>
+        </record>
+
+        <record id="articulos_view_search" model="ir.ui.view">
+            <field name="name">Busqueda de articulos</field>
+            <field name="model">tienda.articulos</field>
+            <field name="arch" type="xml">
+                <search>
+                    <field name="cod" />
+                    <field name="nombre" />
+                    <field name="marca" />
+                    <field name="modelo" />
+                    <field name="descripcion" />
+                    <field name="proveedor" />
+                    <field name="preventa" />
+                </search>
+            </field>
+        </record>
+        <!--
+        <menuitem name="PracticaOdoo1" id="menu_modelos" sequence="10" />
+        <menuitem name="Inicio" id="menu_inicio" parent="menu_modelos" sequence="10"/>-->
+        <menuitem name="Articulos" id="menu_articulos" action="articulos_action" parent="menu_inicio" sequence="10"/>
+
+    </data>
+</odoo>
